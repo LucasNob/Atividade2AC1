@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcionarios</title>
+</head>
+<body>
+    <h1>ID/NOME/EDITORA/LANCAMENTO/ESTOQUE</h1>
+    <form th:action="@{/funcionarios}" method="POST">
+        <input type="number" name="id" />
+        <input type="text" name="nome" />
+        <input type="text" name="editora" />
+        <input type="number" name="lancamento" />
+        <input type="number" name="estoque" />
+        <input type="submit" value="Cadastrar" />
+    </form>
+    <table>
+         <tr th:each= "funcionario: ${funcionarios}">
+             <td th:text="${funcionario.id}"></td>
+             <td th:text="${funcionario.nome}"></td>
+             <td th:text="${funcionario.salario}"></td>
+             <td th:text="${funcionario.dataNasc}"></td>
+             <td th:text="${funcionario.departamento}"></td>
+         </tr>
+     </table>
+</body>
+</html>
