@@ -6,16 +6,28 @@
     <title>Funcionarios</title>
 </head>
 <body>
-    <h1>ID/NOME/EDITORA/LANCAMENTO/ESTOQUE</h1>
-    <form th:action="@{/funcionarios}" method="POST">
-        <input type="number" name="id" />
+    <h1>Funcionários</h1>
+    <form th:action="@{/salvarfuncionario}" method="POST">
+        <h3>Nome</h3>
         <input type="text" name="nome" />
-        <input type="text" name="editora" />
-        <input type="number" name="lancamento" />
-        <input type="number" name="estoque" />
+        <h3>Salario</h3>
+        <input type="number" name="salario" />
+        <h3>Data de Nascimento</h3>
+        <input type="text" name="dataNasc" />
+        <h3>Departamento</h3>
+        <input type="text" name="departamento" />
+        
         <input type="submit" value="Cadastrar" />
     </form>
-    <table>
+    <h1></h1>
+    <table width="500" border = "2px">
+        <tr>
+            <td width="100" height="30">ID</td>
+            <td width="100" >Nome</td>
+            <td width="100" >Salario</td>
+            <td width="100" >Data de Nascimento</td>
+            <td width="100" >Departamento</td>
+        </tr>
          <tr th:each= "funcionario: ${funcionarios}">
              <td th:text="${funcionario.id}"></td>
              <td th:text="${funcionario.nome}"></td>

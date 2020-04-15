@@ -17,8 +17,9 @@ public class FuncionarioService {
     public List<Funcionario> getFuncionarios(){
         return repository.findAll();
     }
-    public void newFuncionario(String nome,double salario, String dataNasc, String departamento){
-        repository.save(new Funcionario(nome,salario,dataNasc,departamento));
+    public void newFuncionario(Funcionario f){
+        repository.save(f);
     }
+
 }
 

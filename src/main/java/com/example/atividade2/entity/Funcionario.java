@@ -18,18 +18,15 @@ public class Funcionario implements Serializable {
     @Id
     @GeneratedValue(strategy =GenerationType.IDENTITY)
     private int id;
+
     @Column(nullable=false)
     private String nome;
+    @Column(nullable=false)
     private Double salario;
     private String dataNasc;
     private String departamento;
 
-    public Funcionario(String nome, Double salario, String dataNasc, String departamento) {
-        this.nome = nome;
-        this.salario = salario;
-        this.dataNasc = dataNasc;
-        this.departamento = departamento;
-    }
+ 
     public int getId() {
         return id;
     }
